@@ -1,0 +1,19 @@
+
+.avatar {
+  overflow: hidden;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10%;
+  border: 1px solid #ddd;
+}
+
+.nickName{
+  margin: 20rpx auto auto 30rpx;
+  font-size: 35rpx;
+}
+
+.neirong{
+  margin: 10rpx auto auto 0;
+  font-size: 30rpx;
+  color: #999;
+}

@@ -1,0 +1,12 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">新闻</view>
+</cu-custom>
+
+<view class="yuanjiao">
+  <view class="text-xl">{{news.title}}</view>
+</view>
+
+<view class="yuanjiao">
+  <view class="text-lg">{{content}}</view>
+</view>

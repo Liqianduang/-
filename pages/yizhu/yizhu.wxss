@@ -1,0 +1,12 @@
+.avatar {
+  overflow: hidden;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 60%;
+  border: 1px solid #ddd;
+}
+
+.nickName{
+  margin: 30rpx auto auto 30rpx;
+  font-size: 40rpx;
+}

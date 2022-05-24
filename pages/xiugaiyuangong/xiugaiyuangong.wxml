@@ -1,0 +1,13 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">修改宿舍</view>
+</cu-custom>
+
+<view class="yuanjiao">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      宿舍：<input class="fuxiabianjv" name="sushe" placeholder="输入宿舍" value="{{ziliao.sushe}}" />
+    </view>
+    <button class=" margin-tb-sm " type="primary" formType="submit">保存</button>
+  </form>
+</view>

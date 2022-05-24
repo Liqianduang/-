@@ -1,0 +1,39 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">已住</view>
+</cu-custom>
+
+<view wx:if="{{wo.shenfen=='学生'}}" class="yuanjiao">
+  <view class="displayflex">
+    <view class="width450">
+      <view class="margin-sm">{{xuesheng.xuexiao}}</view>
+      <view class="margin-sm text-lg">{{xuesheng.sushe}}</view>
+    </view>
+    <view class="margin-tb-xl text-grey" bindtap="genghuansushe">申请更换宿舍</view>
+  </view>
+  <view wx:if="{{nickName}}">
+    <view class="margin-sm text-gray">新舍友申请：</view>
+    <view class="displayflex">
+      <navigator class="padding-lr-lg padding-tb-lg displayflex width350" url="../taziliao/taziliao?openid={{openid}}" hover-class="none">
+        <image class="avatar" src="{{avatarUrl}}"></image>
+        <view class="nickName">{{nickName}}</view>
+      </navigator>
+      <view class="displayflex">
+        <view class="margin-tb-xl padding-tb-sm padding-lr-sm margin-lr-xl text-lg text-green" bindtap="tongyi">同意</view>
+        <view class="margin-tb-xl padding-tb-sm  text-lg text-red" bindtap="jvjue">拒绝</view>
+      </view>
+    </view>
+    <view class="margin-lr-sm text-gray">提示：你目前全部舍友都同意，才会提交该同学的申请给学校宿舍管理员进一步审核。请勿重复点击按钮！</view>
+    <view class="margin-sm"></view>
+  </view>
+</view>
+
+<view wx:if="{{wo.shenfen=='员工'}}" class="yuanjiao">
+  <view class=" displayflex">
+    <view class="width450">
+      <view class="margin-sm">{{yuangong.gongsi}}</view>
+      <view class="margin-sm text-lg">{{yuangong.sushe}}</view>
+    </view>
+    <view class="margin-tb-xl text-grey" bindtap="genghuansushe">申请更换宿舍</view>
+  </view>
+</view>

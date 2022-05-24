@@ -1,0 +1,19 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">娱乐</view>
+</cu-custom>
+
+<view wx:for="{{yule}}" wx:for-item="item" wx:key="index2" class="yuanjiao">
+  <navigator class="padding-tb-sm margin-lr-sm displayflex" url="../taziliao/taziliao?openid={{item.openid}}" hover-class="none">
+    <image class="avatar" src="{{item.avatarUrl}}"></image>
+    <view class="nickName">
+      <view>{{item.nickName}}</view>
+      <view class="text-df text-gray">{{item.createdAt}}</view>
+    </view>
+  </navigator>
+  <view class="margin-lr-sm displayflex text-lg">{{item.neirong}} </view>
+  <view class='displayflex padding-tb-sm margin-lr-sm'>
+    <view wx:for="{{item.tupian}}" wx:for-item="item2" wx:key="*this">
+      <image class='tupian' src="{{item2}}" data-tupian="{{item.tupian}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+    </view>
+  </view>  
+</view>

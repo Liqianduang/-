@@ -1,0 +1,16 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">发布寻找舍友</view>
+</cu-custom>
+
+<view class="explain yuanjiao">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      性别：<input class="fuxiabianjv" name="sex" placeholder="输入性别" />
+    </view>
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      要求：<input class="fuxiabianjv" name="yaoqiu" placeholder="输入要求" />
+    </view>
+    <button class=" margin-tb-sm " type="primary" formType="submit">发布</button>
+  </form>
+</view>

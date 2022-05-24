@@ -1,0 +1,15 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">消息</view>
+</cu-custom>
+
+<view class="yuanjiao">
+  <view class="padding-lr-xl solids-bottom margin-tb-sm" wx:for="{{xiaoxi}}" wx:key="index">
+    <navigator class="margin-tb-sm padding-tb-sm displayflex width650" url="../duihua/duihua?you_openid={{item.you_openid}}" hover-class="none">
+      <image class="avatar" src="{{item.you_avatarUrl}}"></image>
+      <view class="nickName">
+        <view>{{item.you_nickName}}</view>
+        <!-- <view class="neirong">{{item.neirong}}</view> -->
+      </view>
+    </navigator>
+  </view>
+</view>

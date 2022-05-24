@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">助眠工具</view>
+</cu-custom>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{2}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+      {{gongjv[index]}} 
+    </view>
+  </view>
+</scroll-view>  
+
+<view>
+  <view wx:if="{{TabCur==0}}">
+    <view class="explain yuanjiao">
+      <view class="margin-lr-sm margin-tb-sm" wx:for="{{gushi}}" wx:key="index">
+        <navigator class="solids-bottom padding-tb-sm" url="../gushi/gushi?objectId={{item.objectId}}" hover-class="none">
+          <view class="text-lg">{{index+1}}.《{{item.title}}》</view>
+        </navigator>
+      </view>
+      <view class="round-click">
+        <navigator url='../fabugushi/fabugushi' >
+        <view class="text-df">发布</view>
+        <view class="text-df">故事</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view wx:elif="{{TabCur==1}}">
+    <view class="explain yuanjiao">
+      <view class="margin-lr-xl margin-tb-lg" wx:for="{{xinwen}}" wx:key="index">
+        <navigator class="solids-bottom padding-tb-sm" url="../xinwen/xinwen?newsid={{item.post_id}}" hover-class="none">
+          <image mode="aspectFill"  src="{{item.cover}}"></image>
+          <view class="text-df">{{item.title}}</view>
+          <view class="text-gray">{{item.published_at}}——{{item.author_name}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
