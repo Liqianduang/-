@@ -1,0 +1,87 @@
+{
+  "pages": [
+    "pages/shouye/shouye",
+    "pages/genghuansushe/genghuansushe",
+    "pages/genghuanxiangqing/genghuanxiangqing",
+    "pages/shenhegenghuan/shenhegenghuan",
+    "pages/index/index",
+    "pages/yule/yule",
+    "pages/xiugaiyuangong/xiugaiyuangong",
+    "pages/fabu/fabu",
+    "pages/fabuyule/fabuyule",
+    "pages/sheyou/sheyou",
+    "pages/zhaosheyou/zhaosheyou",
+    "pages/xiugai/xiugai",
+    "pages/zhaohezu/zhaohezu",
+    "pages/guanlifangzi/guanlifangzi",
+    "pages/hezu/hezu",
+    "pages/chuzufangzi/chuzufangzi",
+    "pages/guanliyuangong/guanliyuangong",
+    "pages/guanlixuesheng/guanlixuesheng",
+    "pages/yuangongziliao/yuangongziliao",
+    "pages/xueshengziliao/xueshengziliao",
+    "pages/renzheng/renzheng",
+    "pages/duihua/duihua",
+    "pages/fensi/fensi",
+    "pages/taziliao/taziliao",
+    "pages/guanzhu/guanzhu",
+    "pages/jizhang/jizhang",
+    "pages/jiyibi/jiyibi",
+    "pages/zhumian/zhumian",
+    "pages/fabugushi/fabugushi",
+    "pages/bianjiziliao/bianjiziliao",
+    "pages/gushi/gushi",
+    "pages/xinwen/xinwen",
+    "pages/yizhu/yizhu",
+    "pages/tiezi/tiezi",
+    "pages/xiaoxi/xiaoxi",
+    "component/quedingkuang/quedingkuang"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/shouye/shouye",
+        "text": "首页",
+        "iconPath": "image/warehouse-delivery1.png",
+        "selectedIconPath": "image/warehouse-delivery2.png"
+      },{
+        "pagePath": "pages/yule/yule",
+        "text": "娱乐",
+        "iconPath": "image/earth1.png",
+        "selectedIconPath": "image/earth2.png"
+      },
+      
+      {
+        "pagePath": "pages/fabu/fabu",
+        "text": "发布",
+        "iconPath": "image/plus-circle1.png",
+        "selectedIconPath": "image/plus-circle2.png"
+      },
+      {
+        "pagePath": "pages/xiaoxi/xiaoxi",
+        "text": "消息",
+        "iconPath": "image/comments1.png",
+        "selectedIconPath": "image/comments2.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "image/account1.png",
+        "selectedIconPath": "image/account2.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+
+}

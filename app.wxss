@@ -1,0 +1,43 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+
+page {
+  background-color: rgb(235, 235, 235);
+}
+
+.yuanjiao{
+  margin: 15rpx 10rpx;
+  padding: 5rpx 20rpx;
+  font-size: 10pt;
+  color: #000;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+
+.displayflex{
+  display: flex;
+}
+
+.width550{
+  width: 550rpx;
+}
+
+.width650{
+  width: 650rpx;
+}
+
+.width450{
+  width: 450rpx;
+}
+
+.width350{
+  width: 350rpx;
+}
+.width250{
+  width: 250rpx;
+}
+.dibuguding{
+  position:fixed;
+  bottom:0;
+  width:100%
+}
