@@ -1,0 +1,32 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">编辑资料</view>
+</cu-custom>
+
+<view class="explain yuanjiao">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      性别：<input class="fuxiabianjv" name="xingbie" placeholder="输入性别" value="{{xingbie}}"/>
+    </view>
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      年龄：<input class="fuxiabianjv" name="nianling" placeholder="输入地区" value="{{nianling}}"/>
+    </view>
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      性格：<input class="fuxiabianjv" name="xingge" placeholder="输入地区" value="{{xingge}}"/>
+    </view>
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      爱好：<input class="fuxiabianjv" name="aihao" placeholder="输入地区" value="{{aihao}}"/>
+    </view>
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      习惯：<input class="fuxiabianjv" name="xiguan" placeholder="输入地区" value="{{xiguan}}"/>
+    </view>
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      地区：<input class="fuxiabianjv" name="diqu" placeholder="输入地区" value="{{diqu}}"/>
+    </view>
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      个性签名：<input class="fuxiabianjv" name="gexingqianming" placeholder="输入地区" value="{{gexingqianming}}"/>
+    </view>
+    
+    <button class=" margin-tb-sm " type="primary" formType="submit">保存</button>
+  </form>
+</view>

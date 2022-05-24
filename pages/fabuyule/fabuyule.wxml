@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">发布娱乐帖</view>
+</cu-custom>
+
+<view class="explain yuanjiao">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      内容：<input class="fuxiabianjv" name="neirong" placeholder="输入内容" />
+    </view>
+    <view class=" text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      图片：
+
+      <view class="displayflex">
+        <view class='displayflex' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+            <image class='tupian'
+                    src="{{item}}"
+                    data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+            </image>
+            <view class="cuIcon-roundclose" data-index="{{index}}" catchtap="deleteImg"></view>
+        </view>
+      </view>
+      <button class="width250" bindtap="chooseImg" type='primary'>拍照 / 上传</button>
+
+    </view>
+    <button class=" margin-tb-sm " type="primary" formType="submit">发布</button>
+  </form>
+</view>

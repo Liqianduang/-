@@ -1,0 +1,181 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">身份认证</view>
+</cu-custom>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{5}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+      {{shenfen[index]}} 
+    </view>
+  </view>
+</scroll-view>  
+
+<view>
+    <view wx:if="{{TabCur==0}}" class="style-default">
+      <view class="explain yuanjiao">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            姓名：<input class="fuxiabianjv" name="xingming" placeholder="输入姓名" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            学校：<input class="fuxiabianjv" name="xuexiao" placeholder="输入学校" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            学号：<input class="fuxiabianjv" name="xuehao" placeholder="输入学号" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            年级：<input class="fuxiabianjv" name="nianji" placeholder="输入年级" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            专业：<input class="fuxiabianjv" name="zhuanye" placeholder="输入专业" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            宿舍：<input class="fuxiabianjv" name="sushe" placeholder="输入宿舍" />
+          </view>
+          <view class=" text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            学生证照片：
+
+            <view class="displayflex">
+              <view class='displayflex' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                  <image class='tupian'
+                          src="{{item}}"
+                          data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  </image>
+                  <view class="cuIcon-roundclose" data-index="{{index}}" catchtap="deleteImg"></view>
+              </view>
+            </view>
+            <button class="width250" bindtap="chooseImg" type='primary'>拍照 / 上传</button>
+
+          </view>
+          <button class=" margin-tb-sm " type="primary" formType="submit">保存</button>
+        </form>
+      </view>
+    </view>
+
+
+    <view wx:elif="{{TabCur==1}}" class="style-default">
+      <view class="explain yuanjiao">
+        <form catchsubmit="formSubmit2" catchreset="formReset">
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            姓名：<input class="fuxiabianjv" name="xingming" placeholder="输入姓名" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            学校：<input class="fuxiabianjv" name="xuexiao" placeholder="输入学校" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            工号：<input class="fuxiabianjv" name="gonghao" placeholder="输入工号" />
+          </view>
+          <view class=" text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            证明资料照片：
+
+            <view class="displayflex">
+              <view class='displayflex' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                  <image class='tupian'
+                          src="{{item}}"
+                          data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  </image>
+                  <view class="cuIcon-roundclose" data-index="{{index}}" catchtap="deleteImg"></view>
+              </view>
+            </view>
+            <button class="width250" bindtap="chooseImg" type='primary'>拍照 / 上传</button>
+
+          </view>
+          <button class=" margin-tb-sm " type="primary" formType="submit">保存</button>
+        </form>
+      </view>
+    </view>
+
+    <view wx:elif="{{TabCur==2}}" class="style-default">
+      <view class="explain yuanjiao">
+        <form catchsubmit="formSubmit3" catchreset="formReset">
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            姓名：<input class="fuxiabianjv" name="xingming" placeholder="输入姓名"/>
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            公司：<input class="fuxiabianjv" name="gongsi" placeholder="输入公司" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            工号：<input class="fuxiabianjv" name="gonghao" placeholder="输入工号" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            宿舍：<input class="fuxiabianjv" name="sushe" placeholder="输入宿舍" />
+          </view>
+          <view class=" text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            证明资料照片：
+
+            <view class="displayflex">
+              <view class='displayflex' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                  <image class='tupian'
+                          src="{{item}}"
+                          data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  </image>
+                  <view class="cuIcon-roundclose" data-index="{{index}}" catchtap="deleteImg"></view>
+              </view>
+            </view>
+            <button class="width250" bindtap="chooseImg" type='primary'>拍照 / 上传</button>
+
+          </view>
+          <button class=" margin-tb-sm " type="primary" formType="submit">保存</button>
+        </form>
+      </view>
+    </view>
+
+    <view wx:elif="{{TabCur==3}}" class="style-default">
+      <view class="explain yuanjiao">
+        <form catchsubmit="formSubmit4" catchreset="formReset">
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            姓名：<input class="fuxiabianjv" name="xingming" placeholder="输入姓名" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            公司：<input class="fuxiabianjv" name="gongsi" placeholder="输入公司" />
+          </view>
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            工号：<input class="fuxiabianjv" name="gonghao" placeholder="输入工号" />
+          </view>
+          <view class=" text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            证明资料照片：
+
+            <view class="displayflex">
+              <view class='displayflex' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                  <image class='tupian'
+                          src="{{item}}"
+                          data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  </image>
+                  <view class="cuIcon-roundclose" data-index="{{index}}" catchtap="deleteImg"></view>
+              </view>
+            </view>
+            <button class="width250" bindtap="chooseImg" type='primary'>拍照 / 上传</button>
+
+          </view>
+          <button class=" margin-tb-sm " type="primary" formType="submit">保存</button>
+        </form>
+      </view>
+    </view>
+
+    <view wx:elif="{{TabCur==4}}" class="style-default">
+      <view class="explain yuanjiao">
+        <form catchsubmit="formSubmit5" catchreset="formReset">
+          <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            姓名：<input class="fuxiabianjv" name="xingming" placeholder="输入姓名" />
+          </view>
+          <view class=" text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+            证明资料照片(房产证等)：
+
+            <view class="displayflex">
+              <view class='displayflex' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+                  <image class='tupian'
+                          src="{{item}}"
+                          data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                  </image>
+                  <view class="cuIcon-roundclose" data-index="{{index}}" catchtap="deleteImg"></view>
+              </view>
+            </view>
+            <button class="width250" bindtap="chooseImg" type='primary'>拍照 / 上传</button>
+
+          </view>
+          <button class=" margin-tb-sm " type="primary" formType="submit">保存</button>
+        </form>
+      </view>
+    </view>
+  </view>

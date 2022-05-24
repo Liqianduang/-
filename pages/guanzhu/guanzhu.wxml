@@ -1,0 +1,13 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">关注</view>
+</cu-custom>
+
+<view class="yuanjiao">
+  <view class="margin-lr-xl solids-bottom margin-tb-lg" wx:for="{{guanzhu}}" wx:key="index">
+      <navigator class="padding-tb-sm displayflex width650" url="../taziliao/taziliao?openid={{item.guanzhuopenid}}" hover-class="none">
+        <image class="avatar" src="{{item.avatarUrl}}"></image>
+        <view class="nickName">{{item.nickName}}</view>
+      </navigator>
+  </view>
+</view>

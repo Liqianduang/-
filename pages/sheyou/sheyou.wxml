@@ -1,0 +1,13 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">{{didian}}</view>
+</cu-custom>
+
+
+<view wx:for="{{sheyou}}" wx:key="index" class="cu-list menu card-menu  shadow-lg radius">
+    <view wx:if="{{item.didian==didian}}" class="cu-item arrow">
+      <navigator class="content" url="../taziliao/taziliao?openid={{item.openid}}" hover-class="none">
+        <view class="margin-tb-sm">{{item.yaoqiu}}</view>
+      </navigator>
+    </view>
+</view>

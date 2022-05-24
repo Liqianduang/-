@@ -1,0 +1,12 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">故事</view>
+</cu-custom>
+
+<view class="yuanjiao">
+  <view class="text-xl margin-lr-sm margin-tb-sm">{{gushi.title}}</view>
+</view>
+
+<view class="yuanjiao">
+  <text class="text-lg margin-lr-sm margin-tb-sm">{{gushi.content}}</text>
+</view>

@@ -1,0 +1,20 @@
+
+.avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 60%;
+  border: 1px solid #ddd;
+}
+
+.nickName{
+  margin: 30rpx auto auto 30rpx;
+  font-size: 40rpx;
+}
+.tupian {
+  margin: 10rpx 0;
+  overflow: hidden;
+  width: 600rpx;
+  height: 600rpx;
+  border-radius: 10%;
+}

@@ -1,0 +1,7 @@
+.tupian {
+  margin: 10rpx 5rpx;
+  overflow: hidden;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10%;
+}

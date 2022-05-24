@@ -1,0 +1,35 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">{{nickName}}</view>
+</cu-custom>
+
+<scroll-view class="margin-bottom-xl" scroll-y="true" scroll-into-view="id_{{viewid}}" style="height:1200rpx;">
+  <view class="margin-lr-sm margin-tb-xs " id="id_{{index}}" wx:for="{{duihua}}" wx:key="index">
+    <view wx:if="{{item.openid==you_openid}}" class="displayflex ">
+      <navigator class="padding-tb-sm " url="../taziliao/taziliao?openid={{item.openid}}" hover-class="none">
+        <image class="avatar" src="{{item.avatarUrl}}"></image>
+      </navigator>
+      <view>
+        <view class="margin-lr-sm text-sm text-gray">{{item.createdAt}}</view>
+        <view class="margin-lr-sm thisyuanjiao padding-sm bg-white width450">{{item.me_duihua}}</view>
+      </view>
+      
+    </view> 
+    <view wx:else class="displayflex justify-end">
+      <view class="justify-end">
+        <view class="margin-lr-sm text-sm text-gray flex justify-end">{{item.createdAt}}</view>
+        <view class="margin-lr-sm thisyuanjiao padding-sm bg-blue flex justify-end width450">{{item.me_duihua}}</view>
+      </view>
+      <navigator class="padding-tb-sm " url="../taziliao/taziliao?openid={{item.openid}}" hover-class="none">
+        <image class="avatar" src="{{item.avatarUrl}}"></image>
+      </navigator>
+    </view>
+  </view>
+</scroll-view>
+
+<form catchsubmit="formSubmit" catchreset="formReset">
+  <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+    <input class="solid-bottom" name='input' type="text" confirm-type="send" bindinput="cleanInput" bindfocus="InputFocus" bindblur="InputBlur" value="{{shurukuang}}" adjust-position="{{false}}" focus="{{false}}" maxlength="300" cursor-spacing="10"></input>
+    <button class="cu-btn bg-blue shadow" formType="submit">发送</button>
+  </view> 
+</form>

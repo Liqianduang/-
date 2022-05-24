@@ -1,0 +1,43 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">出租房子</view>
+</cu-custom>
+
+<view class="explain yuanjiao">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      室厅：<input class="fuxiabianjv" name="shiting" placeholder="输入几室几厅" />
+    </view>
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      房租：<input class="fuxiabianjv" name="fangzu" type="digit" placeholder="输入房租" />
+    </view>
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      说明：<input class="fuxiabianjv" name="shuoming" placeholder="输入其他说明" />
+    </view>
+
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">
+      <view class="section__title">所在地区：</view>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="fuxiabianjv">
+          {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+    </view>
+    <view class=" text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      照片：
+
+      <view class="displayflex">
+        <view class='displayflex' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+            <image class='tupian'
+                    src="{{item}}"
+                    data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+            </image>
+            <view class="cuIcon-roundclose" data-index="{{index}}" catchtap="deleteImg"></view>
+        </view>
+      </view>
+      <button class="width250" bindtap="chooseImg" type='primary'>拍照 / 上传</button>
+
+    </view>
+    <button class=" margin-tb-sm " type="primary" formType="submit">发布</button>
+  </form>
+</view>

@@ -1,0 +1,44 @@
+<image class="logo" src="cloud://lsy8507.6c73-lsy8507-1304553706/logo.png"></image>
+
+<view class="logo ">
+  <view wx:if="{{shenfen=='学生'}}" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/sheyou/sheyou" hover-class="none">
+        <text class="cuIcon-group_fill text-break" style="font-size: 16pt;"></text>
+        <text class="text-block">寻找本校宿舍舍友</text>
+      </navigator>
+    </view>
+  </view>
+  <view wx:if="{{shenfen=='员工'}}" class="zaosheyou cu-list menu card-menu shadow-lg radius" style="margin: 15rpx 10rpx;">
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/sheyou/sheyou" hover-class="none">
+        <text class="cuIcon-group_fill text-break" style="font-size: 16pt;"></text>
+        <text class="text-block">寻找公司宿舍舍友</text>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view class="logo displayflex text-lg padding-tb-sm padding-lr-xl">
+  <picker  class="width650" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="fuxiabianjv">
+      >>地区：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
+</view>
+
+<view wx:for="{{hezu}}" wx:key="index" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/hezu/hezu?objectId={{item.objectId}}" hover-class="none">
+      <view class="padding-tb-sm">{{item.shiting}}--
+        <text wx:if="{{item.fangzu}}" class="text-red">房租：{{item.fangzu}}</text>
+        <text wx:else="{{item.shuoming}}" class="text-gray width350">{{item.shuoming}}</text>
+      </view>
+      <view class='displayflex'>
+        <view wx:for="{{item.tupian}}" wx:for-item="item2" wx:key="*this">
+          <image class='tupian' src="{{item2}}" mode="aspectFill"></image>
+        </view>
+      </view>  
+    </navigator>
+  </view>
+</view>

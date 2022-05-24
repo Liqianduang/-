@@ -1,0 +1,61 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">记账工具</view>
+</cu-custom>
+
+<view class="yuanjiao">
+  <view class="text-xl margin-lr-sm margin-tb-sm">
+    <navigator class="bg-gradual-pink margin-lr-xl justify-center flex padding yuanjiao" url="../jiyibi/jiyibi" hover-class="none">
+      <view class="text-xl text-white margin-tb-sm">记一笔</view>
+    </navigator>
+    <view class="margin-lr-sm margin-tb-sm">总进账：<text class="text-red text-xxl">{{zongshouru}}</text></view>
+    <view class="margin-lr-sm margin-tb-sm">总支出：<text class="text-green text-xxl">{{zongzhichu}}</text></view>
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{2}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+      {{gongjv[index]}} 
+    </view>
+  </view>
+</scroll-view>  
+
+<view class="yuanjiao">
+  <view wx:if="{{TabCur==0}}">
+    <view class="margin-lr-sm margin-tb-sm solids-bottom" wx:for="{{shoushujv}}" wx:key="index">
+      <view class="displayflex">
+        <view class="text-xl margin-lr-sm margin-tb-sm">{{item.zhangname}}</view>
+        <view class="text-xl margin-lr-sm margin-tb-sm text-red" bindtap="showPopup" data-objectId="{{item.objectId}}" style="margin: auto 50rpx auto auto;"><text class="cuIcon-deletefill"></text></view>
+    </view>
+      <view class="displayflex">
+        <view class="margin-lr-sm margin-tb-sm">{{item.date}}</view> 
+        <view class="text-xxl text-red margin-lr-sm margin-tb-sm" style="margin: 0 50rpx 0 auto;">+{{item.shouru}}</view> 
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{TabCur==1}}">
+    <view class="margin-lr-sm margin-tb-sm solids-bottom" wx:for="{{zhishujv}}" wx:key="index">
+      <view class="displayflex">
+        <view class="text-xl margin-lr-sm margin-tb-sm">{{item.zhangname}}</view>
+        <view class="text-xl margin-lr-sm margin-tb-sm text-red" bindtap="showPopup" data-objectId="{{item.objectId}}"  style="margin: auto 50rpx auto auto;"><text class="cuIcon-deletefill"></text></view>
+      </view>
+      <view class="displayflex">
+        <view class="margin-lr-sm margin-tb-sm">{{item.date}}</view> 
+        <view class="text-xxl text-green margin-lr-sm margin-tb-sm " style="margin: 0 50rpx 0 auto;">-{{item.zhichu}}</view> 
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<quedingkuang id='popup' 
+      title='删除' 
+      content='删除此项' 
+      btn_no='取消' 
+      btn_ok='确定'
+
+      bind:error="_error"  
+      bind:success="_success">
+  </quedingkuang>

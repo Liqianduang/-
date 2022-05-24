@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">更换宿舍</view>
+</cu-custom>
+
+<view class="explain yuanjiao">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      新宿舍：<input class="fuxiabianjv" name="xinsushe" placeholder="输入要更换的宿舍" />
+    </view>
+    <view class=" text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      证明资料：
+
+      <view class="displayflex">
+        <view class='displayflex' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+            <image class='tupian'
+                    src="{{item}}"
+                    data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+            </image>
+            <view class="cuIcon-roundclose" data-index="{{index}}" catchtap="deleteImg"></view>
+        </view>
+      </view>
+      <button class="width250" bindtap="chooseImg" type='primary'>拍照 / 上传</button>
+
+    </view>
+    <button class=" margin-tb-sm " type="primary" formType="submit">提交申请</button>
+  </form>
+</view>

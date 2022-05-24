@@ -1,0 +1,95 @@
+/**index.wxss**/
+
+.information {
+  height: 430rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 150rpx 0 60rpx 0;
+  box-sizing: border-box;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url("https://i.loli.net/2021/11/02/WQyMdF6SqD5e4BC.png");
+} 
+
+.userinfo {
+  margin: 0rpx 0rpx 0rpx 50rpx;
+  flex-direction: row;
+  color: rgb(255, 255, 255);
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 60%;
+  border: 1px solid #ddd;
+}
+
+.userinfo-text{
+  display: flex;
+  flex-direction: column;
+}
+
+.userinfo-nick{
+  margin: 0rpx 0rpx 0rpx 20rpx;
+  font-size: 30rpx;
+}
+
+.userinfo-sign{
+  margin: 0rpx 0rpx 0rpx 20rpx;
+  width: 510rpx;
+  font-size: 25rpx;
+}
+
+.userdatas{
+  margin: 20rpx 0rpx 0rpx 46rpx;
+  display: flex;
+  flex-direction: row;
+  color: rgb(255, 255, 255);
+}
+
+.fensi{
+  margin: 10rpx 0rpx 0rpx 46rpx;
+}
+.guanzhu{
+  margin: 10rpx 0rpx 0rpx 46rpx;  
+}
+
+.idauth{
+  padding: 10rpx 20rpx;
+  font-size: 10pt;
+  color: #000;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+
+.firstnoun{
+  margin: 20rpx 200rpx;
+  font-size: 12pt;
+}
+
+.iconn{
+  margin: 20rpx auto auto 35rpx;
+  width: 150rpx;
+  height: 100rpx;
+  font-size: 25pt;
+}
+.iconn2{
+  margin: 20rpx auto auto 128rpx;
+  width: 230rpx;
+  height: 100rpx;
+  font-size: 25pt;
+}
+
+.textt{
+  margin: -35rpx auto 10rpx 33rpx;
+  font-size: 13pt;
+  /* color: #ee3800; */
+}
+.textt2{
+  margin: -35rpx auto 10rpx 0rpx;
+  font-size: 13pt;
+}
+
+

@@ -1,0 +1,24 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">更换宿舍详情</view>
+</cu-custom>
+<view class="yuanjiao">
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">姓名：{{ziliao.xingming}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">学号：{{ziliao.xuehao}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">年级：{{ziliao.nianji}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">专业：{{ziliao.zhuanye}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">宿舍由-<text class="text-red">{{ziliao.sushe}}</text>-更换到-<text class="text-red">{{xiangqing.xinsushe}}</text></view>
+  <view class=" padding-tb-sm margin-lr-lg  text-lg">证明资料：</view>
+  <view class='displayflex padding-tb-sm margin-lr-sm'>
+      <view wx:for="{{xiangqing.tupian}}" wx:for-item="item2" wx:key="*this">
+        <image class='tupian' src="{{item2}}" data-tupian="{{xiangqing.tupian}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+      </view>
+    </view>
+</view>
+
+<view class="bg-white nav dibuguding">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub"  bindtap="tongguo">通过</view> 
+    <view class="cu-item flex-sub"  bindtap="butongguo">不通过</view> 
+  </view>
+</view> 

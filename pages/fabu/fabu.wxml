@@ -1,0 +1,43 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">发布</view>
+</cu-custom>
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/fabuyule/fabuyule" hover-class="none">
+      <text class="cuIcon-global text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">娱乐帖</text>
+    </navigator>
+  </view>
+</view>
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/zhaohezu/zhaohezu" hover-class="none">
+      <text class="cuIcon-group_fill text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">寻找合租室友</text>
+    </navigator>
+  </view>
+</view>
+<view wx:if="{{shenfen=='学生'}}" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/zhaosheyou/zhaosheyou" hover-class="none">
+      <text class="cuIcon-group_fill text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">寻找本校宿舍舍友</text>
+    </navigator>
+  </view>
+</view>
+<view wx:if="{{shenfen=='员工'}}" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/zhaosheyou/zhaosheyou" hover-class="none">
+      <text class="cuIcon-group_fill text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">寻找公司宿舍舍友</text>
+    </navigator>
+  </view>
+</view>
+<view wx:if="{{shenfen=='房东'}}" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/chuzufangzi/chuzufangzi" hover-class="none">
+      <text class="cuIcon-homefill text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">出租房子</text>
+    </navigator>
+  </view>
+</view>

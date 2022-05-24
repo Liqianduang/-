@@ -1,0 +1,34 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">学生资料</view>
+</cu-custom>
+
+<view class="yuanjiao">
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">姓名：{{ziliao.xingming}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">学校：{{ziliao.xuexiao}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">学号：{{ziliao.xuehao}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">年级：{{ziliao.nianji}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">专业：{{ziliao.zhuanye}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">宿舍：{{ziliao.sushe}} </view>
+  <view class=" padding-tb-sm margin-lr-lg  text-lg">学生证：
+    <view>
+      <image class='tupian' src="{{ziliao.xueshengzheng[0]}}"  mode="aspectFill" bindtap="previewImg"></image>
+    </view>
+  </view>
+</view>
+
+<view class="bg-white nav dibuguding">
+  <view class="flex text-center" wx:if="{{ziliao.shenfen=='审核中'}}">
+    <view class="cu-item flex-sub"  bindtap="shenhe" data-objectId="{{ziliao.objectId}}">点击审核</view> 
+  </view>
+</view>  
+
+<quedingkuang id='popup' 
+      title='审核' 
+      content='是否审核通过' 
+      btn_no='通过' 
+      btn_ok='不通过'
+
+      bind:error="_error"  
+      bind:success="_success">
+  </quedingkuang>

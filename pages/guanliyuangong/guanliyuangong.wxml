@@ -1,0 +1,44 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">管理员工</view>
+</cu-custom>
+
+<view class="sousuo">
+  <form  catchsubmit="formSubmit" catchreset="formReset"> 
+    <view class="displayflex">
+      <input class="height60 margin-lr-lg margin-tb-sm padding-lr-sm width650 bg-gray" name="sousuo" placeholder="输入姓名或宿舍进行搜索" />
+      <button class="yuankuan margin-sm cuIcon-search" type="none" formType="submit"></button>
+    </view>
+  </form>
+</view>
+<view class="sousuo2"></view>
+
+<view wx:if="{{sousuo}}">
+  <view wx:for="{{sousuo}}" wx:key="index" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+    <view class="cu-item arrow">
+      <navigator class="displayflex content" url="/pages/yuangongziliao/yuangongziliao?ta_openid={{item.openid}}" hover-class="none">
+        <text class="cuIcon-profile text-break" style="font-size: 16pt;"></text>
+        <view class=" text-block">{{item.xingming}}，{{item.sushe}}<text wx:if="{{item.shenfen=='审核中'}}">（待审核）</text></view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view wx:else>
+  <view wx:for="{{shenhe}}" wx:key="index" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/yuangongziliao/yuangongziliao?ta_openid={{item.openid}}" hover-class="none">
+        <text class="cuIcon-profile text-break" style="font-size: 16pt;"></text>
+        <text class="text-block">{{item.xingming}}，{{item.sushe}}（待审核）</text>
+      </navigator>
+    </view>
+  </view>
+  <view wx:for="{{yuangong}}" wx:key="index" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/yuangongziliao/yuangongziliao?ta_openid={{item.openid}}" hover-class="none">
+        <text class="cuIcon-profile text-break" style="font-size: 16pt;"></text>
+        <text class="text-block">{{item.xingming}}，{{item.sushe}}</text>
+      </navigator>
+    </view>
+  </view>
+</view>

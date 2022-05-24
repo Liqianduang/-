@@ -1,0 +1,8 @@
+/* pages/genghuanxiangqing/genghuanxiangqing.wxss */
+.tupian {
+  margin: 0 10rpx 0 0;
+  overflow: hidden;
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 5%;
+}

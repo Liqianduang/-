@@ -1,0 +1,21 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">详情</view>
+</cu-custom>
+
+<view class="yuanjiao">
+    <navigator class="padding-lr-lg padding-tb-lg displayflex width650" url="../taziliao/taziliao?openid={{openid}}" hover-class="none">
+      <image class="avatar" src="{{avatarUrl}}"></image>
+      <view class="nickName">{{nickName}}</view>
+      <view class="text-gray solids-bottom padding-tb-lg">点击私信</view>
+    </navigator>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">{{xiangqing.shiting}} </view>
+  <view wx:if="{{xiangqing.fangzu}}" class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">房租：{{xiangqing.fangzu}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">{{xiangqing.shuoming}} </view>
+  <view wx:if="{{xiangqing.tupian}}" class="padding-tb-sm margin-lr-lg text-lg">
+    <view wx:for="{{xiangqing.tupian}}" wx:for-item="item" wx:key="*this">
+      <image class='tupian' src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+    </view>
+  </view>
+</view>
+

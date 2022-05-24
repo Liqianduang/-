@@ -1,0 +1,19 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">发布故事</view>
+</cu-custom>
+
+<view class="yuanjiao">
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <view class="displayflex text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      标题：<input class="width550" name="title" placeholder="输入标题" value=""/>
+    </view>
+    <view class="text-lg padding-tb-sm padding-lr-sm  solids-bottom">    
+      内容：<textarea class="width650" name="content" placeholder="输入内容" maxlength="2000"></textarea>
+    </view>
+    <!-- <navigator url="../zhumian/zhumian" hover-class="none"> -->
+      <button class=" margin-tb-sm " type="primary" formType="submit">发布</button>
+    <!-- </navigator> -->
+
+  </form>
+</view>

@@ -1,0 +1,5 @@
+/* pages/bianjiziliao/bianjiziliao.wxss */
+
+.fuxiabianjv{
+  width: 480rpx;
+}

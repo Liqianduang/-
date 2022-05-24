@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">资料</view>
+</cu-custom>
+
+<view class="yuanjiao">
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex ">
+    <image class="avatar" src="{{ziliao.avatarUrl}}"></image>
+    <view class="nickName">{{ziliao.nickName}}</view>
+  </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">性别：{{ziliao.xingbie}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">年龄：{{ziliao.nianling}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">性格：{{ziliao.xingge}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">爱好：{{ziliao.aihao}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">习惯：{{ziliao.xiguan}} </view>
+  <view class="solids-bottom padding-tb-sm margin-lr-lg displayflex text-lg">地区：{{ziliao.diqu}} </view>
+  <view class=" padding-tb-sm margin-lr-lg displayflex text-lg">个性签名：{{ziliao.gexingqianming}} </view>
+</view>
+
+<view class="bg-white nav dibuguding">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub"  bindtap="shifou_guanzhu">{{shifouguanzhu}}</view>
+    <view class="cu-item flex-sub"  bindtap="sixin">私信</view>
+    <!-- <navigator class="padding-tb-sm " url="../taziliao/taziliao?openid={{item.openid}}" hover-class="none">
+      私信
+    </navigator> -->
+  </view>
+</view>  

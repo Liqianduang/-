@@ -1,0 +1,8 @@
+/* pages/genghuansushe/genghuansushe.wxss */
+.tupian {
+  margin: 10rpx 0;
+  overflow: hidden;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10%;
+}

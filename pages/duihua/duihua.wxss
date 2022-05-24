@@ -1,0 +1,11 @@
+.thisyuanjiao{
+  border-radius: 15rpx;
+}
+
+.avatar {
+  overflow: hidden;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10%;
+  border: 1px solid #ddd;
+}

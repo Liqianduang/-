@@ -1,0 +1,61 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">帖子</view>
+</cu-custom>
+
+<view wx:for="{{yule}}" wx:for-item="item" wx:key="index2" class="yuanjiao">
+  <view class="padding-tb-sm margin-lr-sm displayflex">
+    <image class="avatar" src="{{item.avatarUrl}}"></image>
+    <view class="nickName">
+      <view>{{item.nickName}}</view>
+      <view class="text-df text-gray">{{item.createdAt}}</view>
+    </view>
+    <view class="text-xl  text-red" bindtap="showPopup" data-arr="{{item}}" data-objectId="{{item.objectId}}" ><text class="cuIcon-deletefill"></text></view>
+  </view>
+  <view class="margin-lr-sm displayflex text-lg">{{item.neirong}} </view>
+  <view class='displayflex padding-tb-sm margin-lr-sm'>
+    <view wx:for="{{item.tupian}}" wx:for-item="item2" wx:key="*this">
+      <image class='tupian' src="{{item2}}" data-tupian="{{item.tupian}}" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+    </view>
+  </view>  
+</view>
+
+<view wx:for="{{hezu}}" wx:key="index" class="yuanjiao" >
+  <view class="padding-tb-sm margin-lr-sm text-lg displayflex">
+    <navigator class="content" url="/pages/hezu/hezu?objectId={{item.objectId}}" hover-class="none" style="width: 610rpx;">
+      <view>{{item.shiting}}--
+        <text wx:if="{{item.fangzu}}" class="text-red">房租：{{item.fangzu}}</text>
+        <text wx:else="{{item.shuoming}}" class="text-gray width350">{{item.shuoming}}</text>
+      </view>
+      <view class='displayflex margin-top-sm'>
+        <view wx:for="{{item.tupian}}" wx:for-item="item2" wx:key="*this">
+          <image class='tupian' src="{{item2}}" mode="aspectFill"></image>
+        </view>
+      </view>  
+    </navigator>
+    <view class="text-xl  text-red" bindtap="showPopup" data-arr="{{item}}" data-objectId="{{item.objectId}}" ><text class="cuIcon-deletefill"></text></view>
+  </view>
+</view>
+
+<view wx:for="{{sheyou}}" wx:key="index" class="yuanjiao">
+    <view class=" margin-lr-sm margin-tb-sm text-lg displayflex">
+      <view style="width: 610rpx;">
+        {{item.yaoqiu}}
+      </view>
+      <view class="text-xl  text-red" bindtap="showPopup" data-arr="{{item}}" data-objectId="{{item.objectId}}" ><text class="cuIcon-deletefill"></text></view>
+    </view>
+</view>
+
+
+
+
+
+<quedingkuang id='popup' 
+  title='删除' 
+  content='删除此项' 
+  btn_no='取消' 
+  btn_ok='确定'
+
+  bind:error="_error"  
+  bind:success="_success">
+</quedingkuang>

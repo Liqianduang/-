@@ -1,0 +1,22 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">管理房子</view>
+</cu-custom>
+
+<view wx:for="{{fangzi}}" wx:key="index" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view wx:if="{{item.shiting!='无房找室友'&&item.shiting!='有房找室友'}}" class="cu-item ">
+    <view class="content" >
+      <view>{{item.shiting}}--
+        <text wx:if="{{item.fangzu}}" class="text-red">房租：{{item.fangzu}}</text>
+        <text wx:else="{{item.shuoming}}" class="text-gray width350">{{item.shuoming}}</text>
+        <text wx:if="{{item.yiorwei=='已'}}" class="text-red">（已租出）</text>
+        <text wx:if="{{item.yiorwei=='未'}}" class="text-gray" bindtap="zuchu" data-objectId="{{item.objectId}}">--点击设置已租出</text>
+      </view>
+      <view class='displayflex'>
+        <view wx:for="{{item.tupian}}" wx:for-item="item2" wx:key="*this">
+          <image class='tupian' src="{{item2}}" mode="aspectFill"></image>
+        </view>
+      </view>  
+    </view>
+  </view>
+</view>

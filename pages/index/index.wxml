@@ -1,0 +1,104 @@
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">个人中心</view>
+</cu-custom>
+
+<view class="information">
+  <view class="">
+    <block wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class='cu-btn margin-lr-xl round bg-green shadow'> 获取头像昵称 </button>
+      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn margin-lr-xl round bg-green shadow'> 获取头像昵称 </button>
+    </block>
+    <block wx:else>
+      <view class="displayflex userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+        <view class="userinfo-text ">
+          <view class="userinfo-nick" style="display: flex;">
+            <view>{{userInfo.nickName}}</view>
+            <view class="cuIcon-myfill" style="color: {{sexcolor}};margin: 0 0 auto 10rpx;font-size: 14pt;"></view>
+            <navigator url="/pages/bianjiziliao/bianjiziliao" hover-class="none" style="margin: 5rpx auto auto 20rpx;border-radius: 25px;border: 2px solid #ccc;">
+              <text class="cuIcon-write" style="margin: 0 10rpx;color: #ccc;font-size: 10pt;">编辑资料</text>
+            </navigator>
+          </view>
+          <view class="userinfo-sign" > 
+            <text id="userinfo-nick2">{{motto}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="userdatas">
+        <view wx:if="{{shenfen}}" class="idauth">{{shenfen}}</view>
+        <navigator wx:else class="idauth" url="/pages/renzheng/renzheng" hover-class="none">身份认证</navigator>  
+        <navigator class="guanzhu" url="/pages/guanzhu/guanzhu" hover-class="none">
+          关注：{{guanzhu.length}}
+        </navigator>
+        <navigator class="fensi" url="/pages/fensi/fensi" hover-class="none">
+          粉丝：{{fensi.length}}
+        </navigator>
+      </view>
+    </block>
+  </view>
+  
+</view>
+
+
+
+<view class="iconlist yuanjiao" style="display: flex;">
+  <navigator url="/pages/yizhu/yizhu" hover-class="none">
+    <view class="cuIcon-home iconn" style="color: red;"></view>
+    <view class="textt">已住</view>
+  </navigator>
+  <navigator url="/pages/tiezi/tiezi" hover-class="none">
+    <view class="cuIcon-text iconn" style="color: orange;"></view>
+    <view class="textt">帖子</view>
+  </navigator>
+  <navigator url="/pages/zhumian/zhumian" hover-class="none">
+    <view class="cuIcon-discover iconn" style="color: yellowgreen;"></view>
+    <view class="textt2">助眠工具</view>
+  </navigator>
+  <navigator url="/pages/jizhang/jizhang" hover-class="none">
+    <view class="cuIcon-calendar iconn" style="color: blue;"></view>
+    <view class="textt2">记账工具</view>
+  </navigator>
+</view>
+
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/bianjiziliao/bianjiziliao" hover-class="none">
+      <text class="cuIcon-profile text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">个人资料</text>
+    </navigator>
+  </view>
+</view>
+
+<view wx:if="{{shenfen=='学校管理员'}}" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/guanlixuesheng/guanlixuesheng" hover-class="none">
+      <text class="cuIcon-group text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">管理学生</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/shenhegenghuan/shenhegenghuan" hover-class="none">
+      <text class="cuIcon-group text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">审核学生更换宿舍申请</text>
+    </navigator>
+  </view>
+</view>
+
+<view wx:if="{{shenfen=='公司管理员'}}" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/guanliyuangong/guanliyuangong" hover-class="none">
+      <text class="cuIcon-group text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">管理员工</text>
+    </navigator>
+  </view>
+</view>
+
+<view wx:if="{{shenfen=='房东'}}" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" style="margin: 15rpx 10rpx;">
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/guanlifangzi/guanlifangzi" hover-class="none">
+      <text class="cuIcon-homefill text-break" style="font-size: 16pt;"></text>
+      <text class="text-block">管理房子</text>
+    </navigator>
+  </view>
+</view>
